@@ -13,7 +13,7 @@ library(forecast)
 library(ggpubr)
 library(seasonal)
 
-#creat industry crosswalk
+#create industry crosswalk
 
 #ddi <- read_ipums_ddi("usa_00002.xml")
 #data <- read_ipums_micro(ddi)
@@ -41,7 +41,7 @@ df <- data %>%
   unite(Year_Month, YEAR, MONTH, sep = "-") %>%
   mutate(Year_Month = ym(Year_Month))
 
-#add variables to represents date and region 
+#add variables to represent date and region 
 df <- distinct(df, Year_Month) %>%
   arrange() %>%
   mutate(i=c(1:266)) %>%
